@@ -295,18 +295,17 @@ out$AUC
 plot(varImp(fitXgbFinal))
 
 #### Change cut-off #### 
-optimal_lr.eta=function(x){
-  no=which.max(x$res$sens+x$res$spec)[1]
-  result=x$res$lr.eta[no]
-  result
-}
-
-optimalEta <- optimal_lr.eta(out) 
-
+table <- out$res
 
 b0 <- unname(out$lr$coeff[1])
 b1 <- unname(out$lr$coeff[2])
-threshold = (-log(1/optimalEta-1)-b0)/b1
+table$cutoff <- (-log(1/out$res$lr.eta-1)-b0)/b1
+
+table <- table %>%
+  filter(sens > 0.7) %>%
+  arrange(sens, desc(spec))
+
+threshold <- table[1,"cutoff"]
 
 predOutcomeProb <- predict(fitXgbFinal, newdata = featureTest, type = "prob" )[,2]
 predCutoff <- as.factor(ifelse(predOutcomeProb > threshold, "yes", "no"))
