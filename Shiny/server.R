@@ -47,7 +47,7 @@ server <- function(input, output, session) {
   })
   
   output$pred_result <- renderText({
-    if (pred() > 0.5)
+    if (pred() > threshold)
     {"The risk of cardiotoxicity is high."
     } else {
       "The risk of cardiotoxicity is low."

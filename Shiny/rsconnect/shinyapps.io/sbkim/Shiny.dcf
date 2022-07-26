@@ -1,0 +1,13 @@
+name: Shiny
+title: Shiny
+username:
+account: sbkim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6694140
+bundleId: 6133262
+url: https://sbkim.shinyapps.io/Shiny/
+when: 1658812610.07284
+lastSyncTime: 1658812610.07284
+asMultiple: FALSE
+asStatic: FALSE
