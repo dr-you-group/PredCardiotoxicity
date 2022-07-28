@@ -41,7 +41,7 @@ body <- dashboardBody(
                    numericInput("baseLvGls", "Baseline LVGLS (before chemotherapy)", -15, min = -30, max = 0),
                    numericInput("firstEF", "First EF (after chemotherapy)", 55, min = 0, max = 100),
                    numericInput("firstLvGls", "First EF (after chemotherapy)", -15, min = -30, max = 0),
-                   selectInput("RTx", "Radiotherapy)", c("No" = "0",
+                   selectInput("RTx", "Radiotherapy", c("No" = "0",
                                                          "Yes(Right)" = "1",
                                                          "Yes(Left)" = "2")),
                    selectInput("cancerType", "Type of cancer",  c("Breast Cancer" = "0",
