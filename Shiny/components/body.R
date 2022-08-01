@@ -16,7 +16,11 @@ body <- dashboardBody(
       h2("FAQs"),
       h4("Principal Investigator : Iksung Cho"),
       h4("Affiliation : Division of Cardiology, Severance Cardiovascular Hospital, Yonsei University College of Medicine"),
-      h4("E-mail : iksungcho@yuhs.ac")
+      h4("E-mail : iksungcho@yuhs.ac"),
+      linebreaks(1),
+      h2("Acknowledgement"),
+      h4("This project was supported by a grant from the National R&D Program for Cancer Control,
+      Ministry of Health & Welfare, Republic of Korea (HA21C0065).")
       
     ),
     
