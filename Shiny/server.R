@@ -43,11 +43,11 @@ server <- function(input, output, session) {
   
   pred <- eventReactive(input$submit, {
     pred_xgb <- predict(fitXgbFinal, newdata=testdata(), type="prob")
-    pred <- pred_xgb[,2]
+    pred <- pred_xgb[,2] > threshold
   })
   
   output$pred_result <- renderText({
-    if (pred() > threshold)
+    if (pred())
     {"The risk of cardiotoxicity is high."
     } else {
       "The risk of cardiotoxicity is low."
